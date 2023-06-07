@@ -21,18 +21,37 @@
                 <div class="navbar-nav">
                     <ul class="ul-defaults-none main-menu">
                         <li class="nav-item">Home</li>
-                        <li class="nav-item">About Me</li>
-                        <li class="nav-item">Contact</li>
+                        <li class="nav-item" data-open="about">About Me</li>
+                        <li class="nav-item" data-open="contact">Contact</li>
                     </ul>
                 </div>
             </nav>
         </header>
     </main>
 
-    <div class="full-site-modal page-block is-visible" data-animation="zoomInOut">
+    <div id="about" class="full-site-modal page-block" data-animation="zoomInOut">
         <header class="modal-header">
-            <h3>ABOUT PAGE</h3>
-            <i class="fas fa-times"></i>
+            <h3>About page</h3>
+            <i class="fas fa-times" data-close></i>
+        </header>
+        <div class="modal-body">
+            <div class="img-wrapper">
+                <img src="./assets/images/img4.jpg" alt="headshot">
+            </div>
+            <h2>Rob Schultz</h2>
+            <p>text 1</p>
+            <p>text 2</p>
+            <div>
+                <div>Email Me:</div>
+                <a href="Robschultz4444@yahoo.com"></a>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact" class="full-site-modal page-block" data-animation="zoomInOut">
+        <header class="modal-header">
+            <h3>Contact page</h3>
+            <i class="fas fa-times" data-close></i>
         </header>
         <div class="modal-body">
             <div class="img-wrapper">
