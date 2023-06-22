@@ -14,9 +14,19 @@ const isVisible = 'is-visible';
 const dataFilter = '[data-filter]';
 const portfolioData = '[data-item]';
 
+const portfolioCardData = [
+  {
+    cardType: 'web',
+    cardImage: 'portfolio-1.jpg',
+    cardTitle: 'Web Development',
+    cardSite: 'Food Website'
+  }
+];
+const cardContainer = document.getElementById('card-container');
+
 const root = document.documentElement;
 
-/* Theme */
+/* Theme variables */
 const toggleTheme = document.querySelector(themeTab);
 const switcher = document.querySelectorAll(switcherBtn);
 const currentTheme = localStorage.getItem(theme);
@@ -37,6 +47,7 @@ const setActive = (elm, selector) => {
   elm.classList.add(active);
 }
 
+/* Theme logic */
 const setTheme = (val) => {
   if (val === dark) {
     root.setAttribute(dataTheme,dark);
@@ -76,6 +87,38 @@ for (const elm of switcher) {
     setTheme(toggle);
   })
 }
+
+
+
+
+
+/* Cards */
+function createPortfolioCard (data) {
+  const card = `
+    <div class="portfolio-grid" data-item="${data.cardType}">
+      <div class="portfolio-card">
+        <div class="card-body">
+          <img src="./assets/images/${data.cardImage}" alt="${data.cardTitle}">
+          <a href="#" class="card-popup-box">
+            <div>${data.cardTitle}</div>
+            <h3>${data.cardSite}</h3>
+          </a>
+        </div>
+      </div>
+    </div>
+  `;
+  return card;
+}
+
+portfolioCardData.forEach((card) => {
+  const cardElement = document.createElement('div');
+  cardElement.innerHTML = createPortfolioCard(card);
+  cardContainer.appendChild(cardElement);
+});
+
+
+
+
 
 searchBox.addEventListener('keyup', (e) => {
   const searchInput = e.target.value.toLowerCase().trim();
