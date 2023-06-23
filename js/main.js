@@ -62,7 +62,7 @@ if (currentTheme) {
 
 toggleTheme.addEventListener('click', function() {
   const tab = this.parentElement.parentElement;
-  if (!tab.classList.includes(open)) {
+  if (!tab.classList.contains(open)) {
     tab.classList.add(open);
   } else {
     tab.classList.remove(open);
