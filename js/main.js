@@ -13,6 +13,59 @@ const isVisible = 'is-visible';
 
 const dataFilter = '[data-filter]';
 const portfolioData = '[data-item]';
+const portfolioGrid = '.portfolio-grid';
+
+const cardData = [
+  {
+    cardType: 'web',
+    cardImage: 'portfolio-1.jpg',
+    cardTitle: 'Web Development',
+    cardSite: 'Food Website'
+  },
+  {
+    cardType: 'web',
+    cardImage: 'portfolio-2.jpg',
+    cardTitle: 'Web Development',
+    cardSite: 'Skate Website'
+  },
+  {
+    cardType: 'web',
+    cardImage: 'portfolio-3.jpg',
+    cardTitle: 'Web Development',
+    cardSite: 'Eating Website'
+  },
+  {
+    cardType: 'ui',
+    cardImage: 'portfolio-4.jpg',
+    cardTitle: 'UI Design',
+    cardSite: 'Cool Design'
+  },
+  {
+    cardType: 'app',
+    cardImage: 'portfolio-5.jpg',
+    cardTitle: 'App Development',
+    cardSite: 'Game App'
+  },
+  {
+    cardType: 'app',
+    cardImage: 'portfolio-6.jpg',
+    cardTitle: 'App Development',
+    cardSite: 'Gambling App'
+  },
+  {
+    cardType: 'app',
+    cardImage: 'portfolio-7.jpg',
+    cardTitle: 'App Development',
+    cardSite: 'Money Website'
+  },
+  {
+    cardType: 'ui',
+    cardImage: 'portfolio-8.jpg',
+    cardTitle: 'UI Design',
+    cardSite: 'Fantastic Design'
+  },
+];
+const cardContainer = document.querySelector(portfolioGrid);
 
 const root = document.documentElement;
 
@@ -77,6 +130,29 @@ for (const elm of switcher) {
   })
 }
 
+/* Generate cards */
+function createCard(cardInfo) {
+  const card = document.createElement('div');
+  card.classList.add('portfolio-card');
+  card.dataset.cardInfo = cardInfo.cardType;
+
+  card.innerHTML = `
+    <div class="card-body">
+      <img src="./assets/images/${cardInfo.cardImage}" alt="${cardInfo.cardTitle}">
+      <a href="#" class="card-popup-box">
+        <div>${cardInfo.cardTitle}</div>
+        <h3>${cardInfo.cardSite}</h3>
+      </a>
+    </div>
+  `;
+  return card;
+}
+
+cardData.forEach((item) => {
+  const card = createCard(item);
+  cardContainer.appendChild(card);
+});
+
 searchBox.addEventListener('keyup', (e) => {
   const searchInput = e.target.value.toLowerCase().trim();
 
@@ -87,7 +163,7 @@ searchBox.addEventListener('keyup', (e) => {
       card.style.display = 'none';
     }
   })
-})
+});
 
 for (const link of filterLink) {
   link.addEventListener('click', function() {
