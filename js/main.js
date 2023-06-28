@@ -18,48 +18,56 @@ const portfolioGrid = '.portfolio-grid';
 const cardData = [
   {
     cardType: 'web',
+    cardOpen: 'web-1',
     cardImage: 'portfolio-1.jpg',
     cardTitle: 'Web Development',
     cardSite: 'Food Website'
   },
   {
     cardType: 'web',
+    cardOpen: 'web-2',
     cardImage: 'portfolio-2.jpg',
     cardTitle: 'Web Development',
     cardSite: 'Skate Website'
   },
   {
     cardType: 'web',
+    cardOpen: 'web-3',
     cardImage: 'portfolio-3.jpg',
     cardTitle: 'Web Development',
     cardSite: 'Eating Website'
   },
   {
     cardType: 'ui',
+    cardOpen: 'ui-1',
     cardImage: 'portfolio-4.jpg',
     cardTitle: 'UI Design',
     cardSite: 'Cool Design'
   },
   {
     cardType: 'app',
+    cardOpen: 'app-1',
     cardImage: 'portfolio-5.jpg',
     cardTitle: 'App Development',
     cardSite: 'Game App'
   },
   {
     cardType: 'app',
+    cardOpen: 'app-2',
     cardImage: 'portfolio-6.jpg',
     cardTitle: 'App Development',
     cardSite: 'Gambling App'
   },
   {
     cardType: 'app',
+    cardOpen: 'app-3',
     cardImage: 'portfolio-7.jpg',
     cardTitle: 'App Development',
     cardSite: 'Money Website'
   },
   {
     cardType: 'ui',
+    cardOpen: 'ui-2',
     cardImage: 'portfolio-8.jpg',
     cardTitle: 'UI Design',
     cardSite: 'Fantastic Design'
@@ -135,14 +143,15 @@ function createCard(cardInfo) {
   const card = document.createElement('div');
   card.classList.add('portfolio-card');
   card.dataset.cardInfo = cardInfo.cardType;
+  card.dataset.cardInfo = cardInfo.cardOpen;
 
   card.innerHTML = `
     <div class="card-body">
       <img src="./assets/images/${cardInfo.cardImage}" alt="${cardInfo.cardTitle}">
-      <a href="#" class="card-popup-box">
+      <div class="card-popup-box">
         <div>${cardInfo.cardTitle}</div>
         <h3>${cardInfo.cardSite}</h3>
-      </a>
+      </div>
     </div>
   `;
   return card;
@@ -181,7 +190,7 @@ for (const link of filterLink) {
   })
 }
 
-//Full site modal "Open buttons"
+//Modal/Full site modal "Open buttons"
 for (const elm of openModal) {
     elm.addEventListener('click', function() {
         const modalId = this.dataset.open;
@@ -194,3 +203,16 @@ for (const elm of closeModal) {
         this.parentElement.parentElement.parentElement.classList.remove(isVisible);
     })
 }
+
+//Modal
+document.addEventListener('click', (e) => {
+  if (e.target === document.querySelector('.modal.is-visible')) {
+    document.querySelector('.modal.is-visible').classList.remove(isVisible);
+  }
+});
+
+document.addEventListener('keyup', (e) => {
+  if (e.key === 'Escape') {
+    document.querySelector('.modal.is-visible').classList.remove(isVisible);
+  }
+});
