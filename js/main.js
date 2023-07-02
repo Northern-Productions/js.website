@@ -15,7 +15,7 @@ const dataFilter = '[data-filter]';
 const portfolioData = '[data-item]';
 const portfolioGrid = '.portfolio-grid';
 
-const cardData = [
+const cardAndModalData = [
   {
     cardType: 'web',
     cardOpen: 'web-1',
@@ -84,7 +84,9 @@ const currentTheme = localStorage.getItem(theme);
 
 /* Portfolio */
 const filterLink = document.querySelectorAll(dataFilter);
-const portfolioItems = document.querySelectorAll(portfolioData);
+console.log(filterLink);
+// const portfolioItems = document.querySelectorAll(portfolioData);
+// console.log(portfolioItems);
 const searchBox = document.querySelector('#search');
 
 /* Modal */
@@ -142,25 +144,30 @@ for (const elm of switcher) {
 function createCard(cardInfo) {
   const card = document.createElement('div');
   card.classList.add('portfolio-card');
-  card.dataset.cardInfo = cardInfo.cardType;
-  card.dataset.cardInfo = cardInfo.cardOpen;
-
+  card.dataset.item = cardInfo.cardType;
+  card.dataset.open = cardInfo.cardOpen;
+  
   card.innerHTML = `
-    <div class="card-body">
-      <img src="./assets/images/${cardInfo.cardImage}" alt="${cardInfo.cardTitle}">
-      <div class="card-popup-box">
-        <div>${cardInfo.cardTitle}</div>
-        <h3>${cardInfo.cardSite}</h3>
-      </div>
-    </div>
+  <div class="card-body">
+  <img src="./assets/images/${cardInfo.cardImage}" alt="${cardInfo.cardTitle}">
+  <div class="card-popup-box">
+  <div>${cardInfo.cardTitle}</div>
+  <h3>${cardInfo.cardSite}</h3>
+  </div>
+  </div>
   `;
   return card;
 }
 
-cardData.forEach((item) => {
+cardAndModalData.forEach((item) => {
   const card = createCard(item);
   cardContainer.appendChild(card);
+  console.log(card);
 });
+
+//Search for elements with data-item
+const portfolioItems = document.querySelectorAll(portfolioData);
+console.log(portfolioItems);
 
 searchBox.addEventListener('keyup', (e) => {
   const searchInput = e.target.value.toLowerCase().trim();
