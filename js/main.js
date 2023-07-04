@@ -74,6 +74,32 @@ const cardAndModalData = [
   },
 ];
 const cardContainer = document.querySelector(portfolioGrid);
+/* Generate cards */
+function createCard(cardInfo) {
+  const card = document.createElement('div');
+  card.classList.add('portfolio-card');
+  card.dataset.item = cardInfo.cardType;
+  card.dataset.open = cardInfo.cardOpen;
+  
+  card.innerHTML = `
+  <div class="card-body">
+    <img src="./assets/images/${cardInfo.cardImage}" alt="${cardInfo.cardTitle}">
+    <div class="card-popup-box">
+      <div>${cardInfo.cardTitle}</div>
+      <h3>${cardInfo.cardSite}</h3>
+    </div>
+  </div>
+  `;
+  return card;
+}
+
+/* Generate popup modals */
+
+// Make HTML for each card
+cardAndModalData.forEach((item) => {
+  const card = createCard(item);
+  cardContainer.appendChild(card);
+});
 
 const root = document.documentElement;
 
@@ -84,9 +110,6 @@ const currentTheme = localStorage.getItem(theme);
 
 /* Portfolio */
 const filterLink = document.querySelectorAll(dataFilter);
-console.log(filterLink);
-// const portfolioItems = document.querySelectorAll(portfolioData);
-// console.log(portfolioItems);
 const searchBox = document.querySelector('#search');
 
 /* Modal */
@@ -140,34 +163,8 @@ for (const elm of switcher) {
   })
 }
 
-/* Generate cards */
-function createCard(cardInfo) {
-  const card = document.createElement('div');
-  card.classList.add('portfolio-card');
-  card.dataset.item = cardInfo.cardType;
-  card.dataset.open = cardInfo.cardOpen;
-  
-  card.innerHTML = `
-  <div class="card-body">
-  <img src="./assets/images/${cardInfo.cardImage}" alt="${cardInfo.cardTitle}">
-  <div class="card-popup-box">
-  <div>${cardInfo.cardTitle}</div>
-  <h3>${cardInfo.cardSite}</h3>
-  </div>
-  </div>
-  `;
-  return card;
-}
-
-cardAndModalData.forEach((item) => {
-  const card = createCard(item);
-  cardContainer.appendChild(card);
-  console.log(card);
-});
-
-//Search for elements with data-item
+//Select elements with data-item
 const portfolioItems = document.querySelectorAll(portfolioData);
-console.log(portfolioItems);
 
 searchBox.addEventListener('keyup', (e) => {
   const searchInput = e.target.value.toLowerCase().trim();
@@ -204,6 +201,8 @@ for (const elm of openModal) {
         document.getElementById(modalId).classList.add(isVisible);
     })
 }
+
+console.log(openModal);
 
 for (const elm of closeModal) {
     elm.addEventListener('click', function() {

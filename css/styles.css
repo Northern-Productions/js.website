@@ -333,11 +333,11 @@
 }
 
 [data-animation="slideInOutTop"] .modal-dialog {
-  opacity: 0;
+  opacity: 1;
   transition: all 0.5s;
 }
 
-[data-animation="slideInOutTop"] .modal-dialog.is-visible {
+[data-animation="slideInOutTop"] .modal-dialog .is-visible {
   opacity: 1;
   transition-delay: 0.2s;
 }
