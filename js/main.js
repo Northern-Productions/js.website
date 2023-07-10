@@ -14,6 +14,7 @@ const isVisible = 'is-visible';
 const dataFilter = '[data-filter]';
 const portfolioData = '[data-item]';
 const portfolioGrid = '.portfolio-grid';
+const modalGroup = '.modal-container';
 
 const cardAndModalData = [
   /* Card data */
@@ -89,6 +90,7 @@ const cardAndModalData = [
   ]
 ];
 const cardContainer = document.querySelector(portfolioGrid);
+const modalContainer = document.querySelector(modalGroup);
 
 /* Generate cards */
 function createCard(cardInfo) {
@@ -112,15 +114,42 @@ function createCard(cardInfo) {
 /* Generate popup modals */
 function createModal(modalInfo) {
   const modal = document.createElement('div');
-  modal.id = cardAndModalData.modalId;
+  modal.id = modalInfo.modalId;
+  console.log(modal.id);
   modal.classList.add('modal');
   modal.dataset.animation = 'slideInOutTop';
+  
+  modal.innerHTML = `
+  <div class="modal-dialog">
+  <header class="modal-header">
+  <h3>${modalInfo.modalTitle}</h3>
+  <i class="fas fa-times" data-close></i>
+  </header>
+  <div class="modal-body">
+  <div class="img-wrapper">
+          <img src="./assets/images/${modalInfo.modalImage}" alt=${modalInfo.modalImageAlt}>
+      </div>
+      <div class="text-wrapper">
+      <p><strong>${modalInfo.modalHeader}</strong></p>
+      <p>${modalInfo.modalText1}</p>
+      <p>${modalInfo.modalText2}</p>
+      </div>
+      </div>
+      </div>
+      `
+  return modal;
 }
 
 /* Make HTML for each card */
 cardAndModalData[0].forEach((item) => {
   const card = createCard(item);
   cardContainer.appendChild(card);
+});
+
+/* Make HTML for each card */
+cardAndModalData[1].forEach((item) => {
+  const modal = createModal(item);
+  modalContainer.appendChild(modal);
 });
 
 const root = document.documentElement;
@@ -223,8 +252,6 @@ for (const elm of openModal) {
         document.getElementById(modalId).classList.add(isVisible);
     })
 }
-
-console.log(openModal);
 
 for (const elm of closeModal) {
     elm.addEventListener('click', function() {
