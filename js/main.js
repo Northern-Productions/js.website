@@ -58,7 +58,7 @@ const cardAndModalData = [
     cardAndModalTitle: 'App Development',
     cardSite: 'Game App',
     modalTitle: 'App Project 1',
-    modalHeader: 'My first awesome website',
+    modalHeader: 'My first awesome app',
     modalText1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.',
     modalText2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.'
   },
@@ -69,7 +69,7 @@ const cardAndModalData = [
     cardAndModalTitle: 'App Development',
     cardSite: 'Gambling App',
     modalTitle: 'App Project 2',
-    modalHeader: 'My first awesome website',
+    modalHeader: 'My first awesome app',
     modalText1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.',
     modalText2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.'
   },
@@ -80,7 +80,7 @@ const cardAndModalData = [
     cardAndModalTitle: 'App Development',
     cardSite: 'Money Website',
     modalTitle: 'App Project 3',
-    modalHeader: 'My first awesome website',
+    modalHeader: 'My first awesome app',
     modalText1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.',
     modalText2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.'
   },
@@ -91,7 +91,7 @@ const cardAndModalData = [
     cardAndModalTitle: 'Ui Development',
     cardSite: 'Ui Design',
     modalTitle: 'Ui Project 1',
-    modalHeader: 'My first awesome website',
+    modalHeader: 'My first awesome design',
     modalText1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.',
     modalText2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.'
   },
@@ -102,7 +102,7 @@ const cardAndModalData = [
     cardAndModalTitle: 'Ui Development',
     cardSite: 'Fantastic Design',
     modalTitle: 'Ui Project 2',
-    modalHeader: 'My first awesome website',
+    modalHeader: 'My first awesome design',
     modalText1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.',
     modalText2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.'
   }
