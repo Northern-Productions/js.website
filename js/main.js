@@ -87,6 +87,69 @@ const cardAndModalData = [
       modalText1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.',
       modalText2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.'
     },
+    {
+      modalId: 'web-1',
+      modalTitle: 'Web Project 1',
+      modalImage: 'portfolio-1.jpg',
+      modalImageAlt: 'Web Development',
+      modalHeader: 'My first awesome website',
+      modalText1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.',
+      modalText2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.'
+    },
+    {
+      modalId: 'web-1',
+      modalTitle: 'Web Project 1',
+      modalImage: 'portfolio-1.jpg',
+      modalImageAlt: 'Web Development',
+      modalHeader: 'My first awesome website',
+      modalText1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.',
+      modalText2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.'
+    },
+    {
+      modalId: 'web-1',
+      modalTitle: 'Web Project 1',
+      modalImage: 'portfolio-1.jpg',
+      modalImageAlt: 'Web Development',
+      modalHeader: 'My first awesome website',
+      modalText1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.',
+      modalText2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.'
+    },
+    {
+      modalId: 'web-1',
+      modalTitle: 'Web Project 1',
+      modalImage: 'portfolio-1.jpg',
+      modalImageAlt: 'Web Development',
+      modalHeader: 'My first awesome website',
+      modalText1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.',
+      modalText2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.'
+    },
+    {
+      modalId: 'web-1',
+      modalTitle: 'Web Project 1',
+      modalImage: 'portfolio-1.jpg',
+      modalImageAlt: 'Web Development',
+      modalHeader: 'My first awesome website',
+      modalText1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.',
+      modalText2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.'
+    },
+    {
+      modalId: 'web-1',
+      modalTitle: 'Web Project 1',
+      modalImage: 'portfolio-1.jpg',
+      modalImageAlt: 'Web Development',
+      modalHeader: 'My first awesome website',
+      modalText1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.',
+      modalText2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.'
+    },
+    {
+      modalId: 'web-1',
+      modalTitle: 'Web Project 1',
+      modalImage: 'portfolio-1.jpg',
+      modalImageAlt: 'Web Development',
+      modalHeader: 'My first awesome website',
+      modalText1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.',
+      modalText2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.'
+    }
   ]
 ];
 const cardContainer = document.querySelector(portfolioGrid);
@@ -115,7 +178,6 @@ function createCard(cardInfo) {
 function createModal(modalInfo) {
   const modal = document.createElement('div');
   modal.id = modalInfo.modalId;
-  console.log(modal.id);
   modal.classList.add('modal');
   modal.dataset.animation = 'slideInOutTop';
   
