@@ -16,64 +16,80 @@ const portfolioData = '[data-item]';
 const portfolioGrid = '.portfolio-grid';
 
 const cardAndModalData = [
-  {
-    cardType: 'web',
-    cardOpen: 'web-1',
-    cardImage: 'portfolio-1.jpg',
-    cardTitle: 'Web Development',
-    cardSite: 'Food Website'
-  },
-  {
-    cardType: 'web',
-    cardOpen: 'web-2',
-    cardImage: 'portfolio-2.jpg',
-    cardTitle: 'Web Development',
-    cardSite: 'Skate Website'
-  },
-  {
-    cardType: 'web',
-    cardOpen: 'web-3',
-    cardImage: 'portfolio-3.jpg',
-    cardTitle: 'Web Development',
-    cardSite: 'Eating Website'
-  },
-  {
-    cardType: 'ui',
-    cardOpen: 'ui-1',
-    cardImage: 'portfolio-4.jpg',
-    cardTitle: 'UI Design',
-    cardSite: 'Cool Design'
-  },
-  {
-    cardType: 'app',
-    cardOpen: 'app-1',
-    cardImage: 'portfolio-5.jpg',
-    cardTitle: 'App Development',
-    cardSite: 'Game App'
-  },
-  {
-    cardType: 'app',
-    cardOpen: 'app-2',
-    cardImage: 'portfolio-6.jpg',
-    cardTitle: 'App Development',
-    cardSite: 'Gambling App'
-  },
-  {
-    cardType: 'app',
-    cardOpen: 'app-3',
-    cardImage: 'portfolio-7.jpg',
-    cardTitle: 'App Development',
-    cardSite: 'Money Website'
-  },
-  {
-    cardType: 'ui',
-    cardOpen: 'ui-2',
-    cardImage: 'portfolio-8.jpg',
-    cardTitle: 'UI Design',
-    cardSite: 'Fantastic Design'
-  },
+  /* Card data */
+  [
+    {
+      cardType: 'web',
+      cardOpen: 'web-1',
+      cardImage: 'portfolio-1.jpg',
+      cardTitle: 'Web Development',
+      cardSite: 'Food Website'
+    },
+    {
+      cardType: 'web',
+      cardOpen: 'web-2',
+      cardImage: 'portfolio-2.jpg',
+      cardTitle: 'Web Development',
+      cardSite: 'Skate Website'
+    },
+    {
+      cardType: 'web',
+      cardOpen: 'web-3',
+      cardImage: 'portfolio-3.jpg',
+      cardTitle: 'Web Development',
+      cardSite: 'Eating Website'
+    },
+    {
+      cardType: 'ui',
+      cardOpen: 'ui-1',
+      cardImage: 'portfolio-4.jpg',
+      cardTitle: 'UI Design',
+      cardSite: 'Cool Design'
+    },
+    {
+      cardType: 'app',
+      cardOpen: 'app-1',
+      cardImage: 'portfolio-5.jpg',
+      cardTitle: 'App Development',
+      cardSite: 'Game App'
+    },
+    {
+      cardType: 'app',
+      cardOpen: 'app-2',
+      cardImage: 'portfolio-6.jpg',
+      cardTitle: 'App Development',
+      cardSite: 'Gambling App'
+    },
+    {
+      cardType: 'app',
+      cardOpen: 'app-3',
+      cardImage: 'portfolio-7.jpg',
+      cardTitle: 'App Development',
+      cardSite: 'Money Website'
+    },
+    {
+      cardType: 'ui',
+      cardOpen: 'ui-2',
+      cardImage: 'portfolio-8.jpg',
+      cardTitle: 'UI Design',
+      cardSite: 'Fantastic Design'
+    }
+  ],
+  /* Modal data */
+  [
+    {
+      modalId: 'web-1',
+      modalTitle: 'Web Project 1',
+      modalImage: 'portfolio-1.jpg',
+      modalImageAlt: 'Web Development',
+      modalHeader: 'My first awesome website',
+      modalText1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.',
+      modalText2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.'
+    },
+  ]
 ];
 const cardContainer = document.querySelector(portfolioGrid);
+
 /* Generate cards */
 function createCard(cardInfo) {
   const card = document.createElement('div');
@@ -94,9 +110,15 @@ function createCard(cardInfo) {
 }
 
 /* Generate popup modals */
+function createModal(modalInfo) {
+  const modal = document.createElement('div');
+  modal.id = cardAndModalData.modalId;
+  modal.classList.add('modal');
+  modal.dataset.animation = 'slideInOutTop';
+}
 
-// Make HTML for each card
-cardAndModalData.forEach((item) => {
+/* Make HTML for each card */
+cardAndModalData[0].forEach((item) => {
   const card = createCard(item);
   cardContainer.appendChild(card);
 });
