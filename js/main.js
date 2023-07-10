@@ -14,16 +14,6 @@ const isVisible = 'is-visible';
 const dataFilter = '[data-filter]';
 const portfolioData = '[data-item]';
 
-const portfolioCardData = [
-  {
-    cardType: 'web',
-    cardImage: 'portfolio-1.jpg',
-    cardTitle: 'Web Development',
-    cardSite: 'Food Website'
-  }
-];
-const cardContainer = document.getElementById('card-container');
-
 const root = document.documentElement;
 
 /* Theme variables */
@@ -33,7 +23,6 @@ const currentTheme = localStorage.getItem(theme);
 
 /* Portfolio */
 const filterLink = document.querySelectorAll(dataFilter);
-const portfolioItems = document.querySelectorAll(portfolioData);
 const searchBox = document.querySelector('#search');
 
 /* Modal */
@@ -73,7 +62,7 @@ if (currentTheme) {
 
 toggleTheme.addEventListener('click', function() {
   const tab = this.parentElement.parentElement;
-  if (!tab.classList.includes(open)) {
+  if (!tab.classList.contains(open)) {
     tab.classList.add(open);
   } else {
     tab.classList.remove(open);
@@ -88,37 +77,8 @@ for (const elm of switcher) {
   })
 }
 
-
-
-
-
-/* Cards */
-function createPortfolioCard (data) {
-  const card = `
-    <div class="portfolio-grid" data-item="${data.cardType}">
-      <div class="portfolio-card">
-        <div class="card-body">
-          <img src="./assets/images/${data.cardImage}" alt="${data.cardTitle}">
-          <a href="#" class="card-popup-box">
-            <div>${data.cardTitle}</div>
-            <h3>${data.cardSite}</h3>
-          </a>
-        </div>
-      </div>
-    </div>
-  `;
-  return card;
-}
-
-portfolioCardData.forEach((card) => {
-  const cardElement = document.createElement('div');
-  cardElement.innerHTML = createPortfolioCard(card);
-  cardContainer.appendChild(cardElement);
-});
-
-
-
-
+//Select elements with data-item
+const portfolioItems = document.querySelectorAll(portfolioData);
 
 searchBox.addEventListener('keyup', (e) => {
   const searchInput = e.target.value.toLowerCase().trim();
@@ -130,7 +90,7 @@ searchBox.addEventListener('keyup', (e) => {
       card.style.display = 'none';
     }
   })
-})
+});
 
 for (const link of filterLink) {
   link.addEventListener('click', function() {
@@ -148,7 +108,7 @@ for (const link of filterLink) {
   })
 }
 
-//Full site modal "Open buttons"
+//Modal/Full site modal "Open buttons"
 for (const elm of openModal) {
     elm.addEventListener('click', function() {
         const modalId = this.dataset.open;
@@ -158,6 +118,19 @@ for (const elm of openModal) {
 
 for (const elm of closeModal) {
     elm.addEventListener('click', function() {
-        this.parentElement.parentElement.classList.remove(isVisible);
+        this.parentElement.parentElement.parentElement.classList.remove(isVisible);
     })
 }
+
+//Modal
+document.addEventListener('click', (e) => {
+  if (e.target === document.querySelector('.modal.is-visible')) {
+    document.querySelector('.modal.is-visible').classList.remove(isVisible);
+  }
+});
+
+document.addEventListener('keyup', (e) => {
+  if (e.key === 'Escape') {
+    document.querySelector('.modal.is-visible').classList.remove(isVisible);
+  }
+});
