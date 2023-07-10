@@ -18,20 +18,96 @@ const modalGroup = '.modal-container';
 
 const cardAndModalData = [
   /* Card and modal data */
-  [
-    {
-      cardType: 'web',
-      cardAndModalOpen: 'web-1',
-      cardAndModalImage: 'portfolio-1.jpg',
-      cardAndModalTitle: 'Web Development',
-      cardSite: 'Food Website',
-      modalTitle: 'Web Project 1',
-      modalHeader: 'My first awesome website',
-      modalText1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.',
-      modalText2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.'
-    }
-  ]
+  {
+    cardType: 'web',
+    cardAndModalOpen: 'web-1',
+    cardAndModalImage: 'portfolio-1.jpg',
+    cardAndModalTitle: 'Web Development',
+    cardSite: 'Food Website',
+    modalTitle: 'Web Project 1',
+    modalHeader: 'My first awesome website',
+    modalText1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.',
+    modalText2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.'
+  },
+  {
+    cardType: 'web',
+    cardAndModalOpen: 'web-2',
+    cardAndModalImage: 'portfolio-2.jpg',
+    cardAndModalTitle: 'Web Development',
+    cardSite: 'Skate Website',
+    modalTitle: 'Web Project 2',
+    modalHeader: 'My first awesome website',
+    modalText1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.',
+    modalText2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.'
+  },
+  {
+    cardType: 'web',
+    cardAndModalOpen: 'web-3',
+    cardAndModalImage: 'portfolio-3.jpg',
+    cardAndModalTitle: 'Web Development',
+    cardSite: 'Eating Website',
+    modalTitle: 'Web Project 3',
+    modalHeader: 'My first awesome website',
+    modalText1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.',
+    modalText2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.'
+  },
+  {
+    cardType: 'app',
+    cardAndModalOpen: 'app-1',
+    cardAndModalImage: 'portfolio-4.jpg',
+    cardAndModalTitle: 'App Development',
+    cardSite: 'Game App',
+    modalTitle: 'App Project 1',
+    modalHeader: 'My first awesome website',
+    modalText1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.',
+    modalText2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.'
+  },
+  {
+    cardType: 'app',
+    cardAndModalOpen: 'app-2',
+    cardAndModalImage: 'portfolio-5.jpg',
+    cardAndModalTitle: 'App Development',
+    cardSite: 'Gambling App',
+    modalTitle: 'App Project 2',
+    modalHeader: 'My first awesome website',
+    modalText1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.',
+    modalText2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.'
+  },
+  {
+    cardType: 'app',
+    cardAndModalOpen: 'app-3',
+    cardAndModalImage: 'portfolio-6.jpg',
+    cardAndModalTitle: 'App Development',
+    cardSite: 'Money Website',
+    modalTitle: 'App Project 3',
+    modalHeader: 'My first awesome website',
+    modalText1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.',
+    modalText2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.'
+  },
+  {
+    cardType: 'ui',
+    cardAndModalOpen: 'ui-1',
+    cardAndModalImage: 'portfolio-7.jpg',
+    cardAndModalTitle: 'Ui Development',
+    cardSite: 'Ui Design',
+    modalTitle: 'Ui Project 1',
+    modalHeader: 'My first awesome website',
+    modalText1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.',
+    modalText2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.'
+  },
+  {
+    cardType: 'ui',
+    cardAndModalOpen: 'ui-2',
+    cardAndModalImage: 'portfolio-8.jpg',
+    cardAndModalTitle: 'Ui Development',
+    cardSite: 'Fantastic Design',
+    modalTitle: 'Ui Project 2',
+    modalHeader: 'My first awesome website',
+    modalText1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.',
+    modalText2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur justo fringilla aliquet.'
+  }
 ];
+
 const cardContainer = document.querySelector(portfolioGrid);
 const modalContainer = document.querySelector(modalGroup);
 
@@ -85,13 +161,13 @@ function createModal(modalInfo) {
 }
 
 /* Make HTML for each card */
-cardAndModalData[0].forEach((item) => {
+cardAndModalData.forEach((item) => {
   const card = createCard(item);
   cardContainer.appendChild(card);
 });
 
 /* Make HTML for each card */
-cardAndModalData[0].forEach((item) => {
+cardAndModalData.forEach((item) => {
   const modal = createModal(item);
   modalContainer.appendChild(modal);
 });
