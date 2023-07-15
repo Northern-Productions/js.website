@@ -292,7 +292,7 @@
 }
 
 .review-item.active {
-  transform: translate(0 -10%);
+  transform: translateY(-10%);
   z-index: 10;
   opacity: 1;
 }

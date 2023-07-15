@@ -127,7 +127,6 @@ function createCard(cardInfo) {
     </div>
   </div>
   `;
-  console.log(card);
   return card;
 }
 
@@ -156,7 +155,6 @@ function createModal(modalInfo) {
     </div>
   </div>
   `
-  console.log(modal);
   return modal;
 }
 
