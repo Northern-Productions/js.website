@@ -171,7 +171,7 @@
             <img src="./assets/images/img4.jpg" alt="headshot">
           </div>
           <div class="about-text">
-            <h2>Rob Schultz</h2>
+            <h2 class="header-md">Rob Schultz</h2>
             <p>text 1</p>
             <p>text 2</p>
             <div class="contact-me-block">
@@ -204,16 +204,18 @@
           <i class="fas fa-times" data-close></i>
         </header>
         <div class="modal-body">
-          <div class="img-wrapper">
-              <img src="./assets/images/img4.jpg" alt="headshot">
+          <div class="contact-text">
+            <h2 class="header-md">Rob Schultz</h2>
+            <div>Have a project or question? Send me a message</div>
+            <div>I will replay within 48 hours.</div>
           </div>
-          <h2>Rob Schultz</h2>
-          <p>text 1</p>
-          <p>text 2</p>
-          <div>
-            <div>Email Me:</div>
-            <a href="#">FakeEmail@yahoo.com</a>
-          </div>
+          <form class="folio-form">
+            <input class="form-control" name="name" type="text" placeholder="Name">
+            <input class="form-control" name="email" type="email" placeholder="Email">
+            <input class="form-control" name="subject" type="text" placeholder="Subject">
+            <textarea class="form-control" name="message" cols="30" rows="3" placeholder="Write your message..."></textarea>
+            <input type="submit" value="Send" class="btn btn-primary round-pill">
+          </form>
         </div>
       </div>
     </div>
